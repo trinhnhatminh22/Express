@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 16px , Arial, Helvetica, sans-serif ;
+}
+
+.menu-top {
+    margin-top: 10px;
+    background-color:darkslategrey;
+    overflow: hidden;
+}
+
+.menu-top a {
+    float:left;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    color:darkkhaki;
+}
+
+.menu-top a:hover {
+    color: darkcyan;
+    background-color: cadetblue;
+}
