@@ -1,0 +1,13 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.create-user {
+    font-family: 16px, Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding: 10px 10px;
+    margin: auto;
+    width: 15%;
+    border: 3px solid #73AD;
+}
