@@ -1,0 +1,23 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  link(rel='stylesheet', href='../css/create-user-css.css')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Document
+form(action='/user/create', method='POST')
+  .create-user
+    table
+      tr
+        th
+          label User Name
+        th
+          input(type='text', name='userName')
+      tr
+        th
+          label Password
+        th
+          input(type='text', name='userPass')
+      tr.message-here
+        th
+        th
+          button  Create User 
