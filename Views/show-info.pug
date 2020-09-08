@@ -1,0 +1,20 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  style
+             include ../css/table-css.css
+  title Document
+  table
+    tr
+      th ID
+      th user name
+      th password 
+    tbody
+     each users in user
+      tr
+        td #{users.id}
+        td #{users.name}
+        td #{users.pass}
+
+a(href="/") Back to menu
