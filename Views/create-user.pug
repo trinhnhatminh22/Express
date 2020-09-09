@@ -7,6 +7,8 @@ head
   title Document
 form(action='/user/create', method='POST')
   .create-user
+    if alarmLog != null
+      p Show log: #{alarmLog}   
     table
       tr
         th
@@ -22,3 +24,4 @@ form(action='/user/create', method='POST')
         th
         th
           button  Create User 
+        
