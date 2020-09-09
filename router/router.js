@@ -4,7 +4,6 @@ var controller = require('../controller/index-controller.js');
 
 
 router.get('/', controller.menu);
-console.log('go here');
 
 router.get('/create-user', controller.showCreate);
 
