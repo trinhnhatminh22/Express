@@ -1,22 +1,25 @@
-var i = 3;
-var user = [];
-var user_obj = function(id, name, pass) {
-    this.id = id;
-    this.name = name;
-    this.pass = pass;
-    getName() = () => {
-        return this.name;
-    };
-
-};
-
+const User = require('../Entity/userInfo.js');
+const ValidateUser = require('../module/user_info.js');
+var i = 1;
+var user1 = [];
 
 module.exports.addUser = function(req, res) {
     var userFromBody = req.body;
-    var user_obj1 = new user_obj(i, userFromBody.userName, userFromBody.userPass);
-    user.push(user_obj1);
-    console.log(user.getName());
-    res.redirect('/');
+    var alarmLog = ValidateUser.validateUserInfo(userFromBody.userName, userFromBody.userPass);
+    console.log(alarmLog);
+    if (alarmLog.length === 0) {
+        var userInfo1 = new User();
+        userInfo1.userId = i;
+        i++;
+        userInfo1.userName = userFromBody.userName;
+        userInfo1.userPass = userFromBody.userPass;
+        user1.push(userInfo1);
+        res.redirect('/');
+    } else {
+        res.render('create-user', {
+            alarmLog: alarmLog
+        });
+    }
 };
 
 module.exports.menu = function(req, res) {
@@ -29,6 +32,6 @@ module.exports.showCreate = function(req, res) {
 
 module.exports.showInformation = function(req, res) {
     res.render('show-info', {
-        user: user
+        user: user1
     });
 }
