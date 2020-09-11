@@ -1,27 +1,20 @@
 doctype html
 head
   meta(charset='UTF-8')
-  style
-             include ../css/create-user-css.css
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   title Document
+
+p Create User Infomation
+if alarmLog 
+  div.alert.alert-danger
+    p.text-secondary #{alarmLog}
 form(action='/user/create', method='POST')
-  .create-user
-    if alarmLog != null
-      p Show log: #{alarmLog}   
-    table
-      tr
-        th
-          label User Name
-        th
-          input(type='text', name='userName')
-      tr
-        th
-          label Password
-        th
-          input(type='text', name='userPass')
-      tr.message-here
-        th
-        th
-          button  Create User 
-        
+  .form-group
+    label(for='exampleInputEmail1') Email address
+    input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email', name='userName')
+    small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+  .form-group
+    label(for='exampleInputPassword1') Password
+    input#exampleInputPassword1.form-control(type='password', placeholder='Password', name='userPass')
+  button.btn.btn-success Submit

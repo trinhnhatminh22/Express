@@ -5,6 +5,7 @@ var user1 = [];
 
 module.exports.addUser = function(req, res) {
     var userFromBody = req.body;
+    console.log(userFromBody.userName);
     var alarmLog = ValidateUser.validateUserInfo(userFromBody.userName, userFromBody.userPass);
     console.log(alarmLog);
     if (alarmLog.length === 0) {
@@ -19,6 +20,7 @@ module.exports.addUser = function(req, res) {
         res.render('create-user', {
             alarmLog: alarmLog
         });
+        console.log(alarmLog);
     }
 };
 
